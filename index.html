@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заметки</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Мои заметки</h1>
+
+      <form id="note-form" class="note-form">
+        <div class="field-group">
+          <label for="note-title">Заголовок заметки</label>
+          <input
+            id="note-title"
+            name="note-title"
+            type="text"
+            placeholder="Например: Список покупок"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="field-group">
+          <label for="note-description">Описание</label>
+          <textarea
+            id="note-description"
+            name="note-description"
+            rows="6"
+            placeholder="Напишите подробности заметки..."
+          ></textarea>
+        </div>
+
+        <button type="submit">Добавить заметку</button>
+      </form>
+
+      <ul id="notes-list" class="notes-list"></ul>
+    </main>
+
+    <template id="note-template">
+      <li class="note-item">
+        <div class="note-main">
+          <span class="note-title"></span>
+          <div class="actions">
+            <button type="button" class="open-btn">Открыть</button>
+            <button type="button" class="edit-btn">Редактировать</button>
+            <button type="button" class="delete-btn">Удалить</button>
+          </div>
+        </div>
+        <div class="note-details hidden">
+          <p class="note-description"></p>
+        </div>
+      </li>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
